@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 style="font-family: 'Courier New', Courier, monospace;">Please Enter the Password</h1>
+
+    <input type="password" id="txtPWD1">
+    <button id="btn1" onclick="ValidatePassword()">Login</button>
+    <h4 id="txtError" style="color: red;font-family: 'Courier New', Courier, monospace;"></h2>
+    <script>
+        var originalPassword="PASSWORD";
+
+        function ValidatePassword(){
+            var inPWD=document.getElementById("txtPWD1").value;
+
+            if(originalPassword===inPWD){
+                document.writeln("Welcome to the Portal");
+            }
+            else
+            {
+                document.getElementById("txtError").innerText="Incorrect password! Please reload page again";
+                //document.writeln("Please reload the page and try again");
+            }
+
+
+        }
+
+    </script>
+
+
+
+</body>
+</html>
