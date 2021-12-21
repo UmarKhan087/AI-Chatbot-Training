@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="percentage">
+
+    <button id="btn" onclick="getGrades()">Find grades</button>
+
+
+    <script>
+       
+        function getGrades() {
+            var inputVal = document.getElementById("percentage").value;
+
+            if (inputVal >0 && inputVal<50) {
+                document.write("Your Grade is 'F'");
+            } 
+            else if (inputVal >=50 && inputVal<60) {
+                document.write("Your Grade is 'C'");
+            }
+            else if (inputVal >=60 && inputVal<70) {
+                document.write("Your Grade is 'B'");
+            }
+            else if (inputVal >=70 && inputVal<80) {
+                document.write("Your Grade is 'A-'");
+            }else if (inputVal >=80 && inputVal<90) {
+                document.write("Your Grade is 'A'");
+            }
+            else if (inputVal >=90 && inputVal<100) {
+                document.write("Your Grade is 'A+'");
+            }
+
+        }
+
+
+        
+    </script>
+
+</body>
+
+</html>
+
+<!-- Comparison Operators
+    ==	equal to	x == 8	false	x == 5	true	x == "5"	true	
+    ===	equal value and equal type	x === 5	true	x === "5"	false	!=	not equal	x != 8	true	
+    !==	not equal value or not equal type	x !== 5	false	x !== "5"	true x !== 8	true	
+    >	greater than	x > 8	false	
+    <	less than	x < 8	true	
+    >=	greater than or equal to	x >= 8	false	
+    <=	less than or equal to	x <= 8	true
+ -->
