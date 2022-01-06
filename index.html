@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- SumMatrices(); -->
+    <form onsubmit=" return false;">
+        <h1 style="font-family: 'Courier New', Courier, monospace;">Matrix-1</h1><br>
+        <table border="1" id="matrix1">
+            <tr>
+                <td> <input type="number" id="a1" placeholder="a" style="border: 0cm;"></td>
+                <td> <input type="number" id="b1" placeholder="b" style="border: 0cm;"></td>
+                <td> <input type="number" id="c1" placeholder="c" style="border: 0cm;"></td>
+            </tr>
+
+            <tr>
+                <td> <input type="number" id="d1" placeholder="d" style="border: 0cm;"></td>
+                <td> <input type="number" id="e1" placeholder="e" style="border: 0cm;"></td>
+                <td> <input type="number" id="f1" placeholder="f" style="border: 0cm;"></td>
+            </tr>
+            <tr>
+                <td> <input type="number" id="g1" placeholder="g" style="border: 0cm;"></td>
+                <td> <input type="number" id="h1" placeholder="h" style="border: 0cm;"></td>
+                <td> <input type="number" id="i1" placeholder="i" style="border: 0cm;"></td>
+            </tr>
+
+
+        </table>
+
+        <br>
+        <h1 style="font-family: 'Courier New', Courier, monospace;">Matrix-2</h1><br>
+        <table border="1" id="matrix2">
+            <tr>
+                <td><input type="number" id="a2" placeholder="a" style="border: 0cm;"></td>
+                <td> <input type="number" id="b2" placeholder="b" style="border: 0cm;"></td>
+                <td> <input type="number" id="c2" placeholder="c" style="border: 0cm;"></td>
+            </tr>
+
+            <tr>
+                <td> <input type="number" id="d2" placeholder="d" style="border: 0cm;"></td>
+                <td> <input type="number" id="e2" placeholder="e" style="border: 0cm;"></td>
+                <td> <input type="number" id="f2" placeholder="f" style="border: 0cm;"></td>
+            </tr>
+            <tr>
+                <td> <input type="number" id="g2" placeholder="g" style="border: 0cm;"></td>
+                <td> <input type="number" id="h2" placeholder="h" style="border: 0cm;"></td>
+                <td> <input type="number" id="i2" placeholder="i" style="border: 0cm;"></td>
+            </tr>
+
+
+        </table>
+
+        <br>
+
+        <table id="resHTML"></table>
+
+        <!-- type="submit" -->
+        <button onclick="SumMatrices()">Sum Matrices</button>
+
+
+    </form>
+
+    <br>
+
+    <div id="myTable"></div>
+
+    <script>
+        function SumMatrices() {
+
+
+            // let tabnumber = document.getElementById("Tablenumber").value;
+
+            // var mat1=[3][3];
+            var mat1 = [];
+            mat1.push([document.getElementById("a1"), document.getElementById("b1"), document.getElementById("c1")]);
+            mat1.push([document.getElementById("d1"), document.getElementById("e1"), document.getElementById("f1")]);
+            mat1.push([document.getElementById("g1"), document.getElementById("h1"), document.getElementById("i1")]);
+
+
+            var mat2 = [];
+            mat2.push([document.getElementById("a2"), document.getElementById("b2"), document.getElementById("c2")]);
+            mat2.push([document.getElementById("d2"), document.getElementById("e2"), document.getElementById("f2")]);
+            mat2.push([document.getElementById("g2"), document.getElementById("h2"), document.getElementById("i2")]);
+
+ 
+            console.log(mat2[0][1].value);
+             
+            document.write("<table>");
+
+            mat1.map((ma1Row, index1) => {
+
+                document.write("<tr>");
+                ma1Row.map((cellitem, index2) => {
+                    let x=0;
+                     x=Number(cellitem.value) + Number(mat2[index1][index2].value);
+
+
+                     document.write( "<td>" + x + "</td>");
+                   
+                     console.log("inside map body: ", index2, cellitem.value,mat2[index1][index2].value);
+
+                })
+                document.write("</tr>");
+
+            })
+            document.write("</table>");
+
+
+
+
+
+            // mytable.innerText = "";
+
+            // for (let index = 1; index <= 10; index++) {
+            //     let result = tabnumber * index;
+
+            //     mytable.innerText += `${tabnumber} x ${index} = ${result} \n`;
+
+
+
+            // }
+
+            //Testing Map
+            //var firstname=["ali","rizwan", "salman"];
+            // mat1.map((matr, index) => {
+
+            //     console.log("inside map body: ", index, eachitem);
+            // })
+
+
+            //1. ask user for two 3x3 matric and sum their elements and display results
+            //2. use MAP for printing nested array combinations
+
+
+            //Easier way of loop is MAP
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
