@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span style="width: 600px; border: 2px;">
+        <h1 id="hResult" style="width: 200px;border: 20px;"></h1>
+        <!-- <input type="text" style="width: 200px;" id ="hResult"> -->
+        <br>
+        <br>
+    </span>
+
+    <span>
+        <button id="btn1" onclick="enterNumber('1')">1</button>
+        <button id="btn2" onclick="enterNumber('2')">2</button>
+        <button id="btn3" onclick="enterNumber('3')">3</button>
+        <button id="btn4" onclick="enterNumber('4')">4</button>
+        <button id="btn5" onclick="enterNumber('5')">5</button>
+        <br>
+        <br>
+    </span>
+    <span>
+        <button id="btn6" onclick="enterNumber('6')">6</button>
+        <button id="btn7" onclick="enterNumber('7')">7</button>
+        <button id="btn8" onclick="enterNumber('8')">8</button>
+        <button id="btn9" onclick="enterNumber('9')">9</button>
+        <button id="btn0" onclick="enterNumber('0')">0</button>
+        <br>
+        <br>
+    </span>
+    <span>
+        <button id="btnPlus" onclick="CalculateResult('+')">+</button>
+        <button id="btnMinus" onclick="CalculateResult('-')">-</button>
+        <button id="btnDivide" onclick="CalculateResult('/')">/</button>
+        <button id="btnDivide" onclick="CalculateResult('*')">*</button>
+        <button id="btnCalculate" onclick="CalculateResult('=')">Calculate</button>
+        <br>
+    </span>
+</body>
+
+<script>
+
+    let numberVal = '';
+    let operator_previous = '';
+    let numResult = '';
+    let numInput = '';
+
+    var hresult = document.getElementById("hResult");
+
+    function enterNumber(keyValue) {
+        if (numInput === '') {
+            hresult.innerHTML = "";
+        }
+
+
+        hresult.innerHTML += keyValue;
+        numInput += keyValue;
+        console.log("er0a ", numInput);
+    }
+
+
+    function CalculateResult(_operator) {
+
+        hresult.innerHTML = '';
+
+        if (numResult === '') {
+            numResult = numInput;
+
+        } else {
+            //if (operator_previous != undefined && operator_previous != '') {
+
+            console.log("er1 ");
+            switch (operator_previous) {
+                case "*": numResult = Number(numResult) * Number(numInput);
+                    break;
+                case "+": numResult = Number(numResult) + Number(numInput);
+                    break;
+                case "-": numResult = Number(numResult) - Number(numInput);
+                    break;
+                case "/": numResult = Number(numResult) / Number(numInput);
+                    break;
+
+            }
+
+            hresult.innerHTML = numResult;
+
+
+        }
+
+        numInput = '';
+        operator_previous = _operator;
+
+    }
+
+</script>
+
+</html>
